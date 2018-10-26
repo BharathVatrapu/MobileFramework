@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="IOS Suite" parallel="tests" thread-count="10" verbose="1">
+    <!-- PROD, QA1 -->
+    <parameter name="environment" value="PROD"/>
+    <parameter name="network" value="cloud"/>
+    <!-- iPhone-6S, Pixel  -->
+    <parameter name="mobileDevice" value="iPhone-6S"/>
+
+    <parameter name="appName" value="com.safeway.j4u.entprod"/>
+
+    <listeners>
+        <listener class-name="com.demoproject.listeners.TestListener"/>
+    </listeners>
+    <groups>
+        <run>
+            <include name="Demo" />
+        </run>
+    </groups>
+    <test name="Test-1">
+
+        <parameter name="banner" value="safeway"/>
+        <classes>
+            <!-- Registration Suite -->
+            <class name="com.demoproject.testsuites.demo.Demo1" />
+        </classes>
+    </test>
+</suite>
+
